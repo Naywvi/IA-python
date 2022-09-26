@@ -1,9 +1,13 @@
 {"intents": [
     {"tag": "salutations",
-     "patterns": ["coucou"],
+     "patterns": ["coucou","coucou2"],
      "responses": ["Comment tu vas ?"],
      "context": [""]
-    }
- 
+    },
+    {"tag": "aurevoirs",
+    "patterns": ["bye"],
+    "responses": ["byebye"],
+    "context": [""]
+   }
 ]
 }

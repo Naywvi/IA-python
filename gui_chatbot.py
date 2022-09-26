@@ -11,16 +11,16 @@ intents = json.loads(open('intents.json').read())
 words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('classes.pkl','rb'))
 def clean_up_sentence(sentence):
-     # tokenize the pattern - splitting words into array
+    # tokenize the pattern - splitting words into array
     sentence_words = nltk.word_tokenize(sentence)
-     # stemming every word - reducing to base form
+    # stemming every word - reducing to base form
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
     return sentence_words
- # return bag of words array: 0 or 1 for words that exist in sentence
+    # return bag of words array: 0 or 1 for words that exist in sentence
 def bag_of_words(sentence, words, show_details=True):
-     # tokenizing patterns
+    # tokenizing patterns
     sentence_words = clean_up_sentence(sentence)
-     # bag of words - vocabulary matrix
+    # bag of words - vocabulary matrix
     bag = [0]*len(words)  
     for s in sentence_words:
         for i,word in enumerate(words):
@@ -54,6 +54,7 @@ def getResponse(ints, intents_json):
  #Creating tkinter GUI
 import tkinter
 from tkinter import *
+
 def send():
     msg = EntryBox.get("1.0",'end-1c').strip()
     EntryBox.delete("0.0",END)
@@ -68,7 +69,7 @@ def send():
         ChatBox.config(state=DISABLED)
         ChatBox.yview(END)
 root = Tk()
-root.title("Chatbot")
+root.title("NaybB")
 root.geometry("400x500")
 root.resizable(width=FALSE, height=FALSE)
  #Create Chat window
